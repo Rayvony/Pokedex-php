@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
         exit();
     } else {
 
-        $error = "Nombre de usuario o contraseña incorrectos.";
+        $error = "Incorrect username or password";
     }
 }
 ?>
@@ -39,13 +39,13 @@ if(isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <h1>Iniciar sesión</h1>
+    <h1>Welcome</h1>
 
     <?php if(isset($error)): ?>
     <p><?php echo $error; ?></p>
@@ -53,13 +53,13 @@ if(isset($_POST['submit'])) {
 
 
     <form action="login.php" method="post">
-        <label for="username">Nombre de usuario:</label>
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
-        <label for="password">Contraseña:</label>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit" name="submit">Iniciar sesión</button>
+        <button type="submit" name="submit">Log in</button>
     </form>
 
 </body>

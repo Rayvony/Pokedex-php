@@ -32,9 +32,12 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
     <h1>Pokédex</h1>
 
     <form action="search.php" method="get">
-        <input type="text" name="search" placeholder="Buscar Pokémon por nombre...">
-        <button type="submit">Buscar</button>
+        <input type="text" name="search" placeholder="Search Pokémon by name">
+        <button type="submit">Search</button>
     </form>
+    <button>
+        <a href="login.php">Log in </a>
+    </button>
     <?php if($errorMessage): ?>
     <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
