@@ -49,7 +49,11 @@ $result = $conn->query($sql);
                 </td>
                 <td><?php echo $row['dexNumber']; ?>
                 </td>
-                <td><?php echo $row['name']; ?>
+                <td>
+                    <a
+                        href="/pokedex/pokemon.php?id=<?php echo $row['id']; ?>">
+                        <?php echo $row['name']; ?>
+                    </a>
                 </td>
                 <td><img
                         src=<?php echo $row['image']; ?>
@@ -65,14 +69,19 @@ $result = $conn->query($sql);
                 }
                 ?>
                 </td>
-                <td><button>Edit</button></td>
-                <td><button>Delete</button></td>
+                <td><a
+                        href="editPokemon.php?id=<?php echo $row['id']; ?>"><button>Edit</button></a>
+                </td>
+
+                <td><a
+                        href="deletePokemon.php?id=<?php echo $row['id']; ?>"><button>Delete</button></a>
+                </td>
             </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
 
-
+    <button><a href="addPokemon.php">Add Pokémon</a></button>
 
 </body>
 

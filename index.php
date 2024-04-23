@@ -50,10 +50,9 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
                 <h3 class="pkmn_name">
                     <?php echo $row['name']; ?>
                 </h3>
-                <img
-                    src=<?php echo $row['image']; ?>
-                class="pkmn_sprite"
-                alt="<?php echo $row['name']; ?>">
+                <img src="<?php echo $row['image']; ?>"
+                    class="pkmn_sprite"
+                    alt="<?php echo $row['name']; ?>">
             </div>
         </a>
         <?php endwhile; ?>

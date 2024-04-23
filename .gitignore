@@ -17,6 +17,8 @@ Thumbs.db
 
 /sessions/
 
+/assets/sprites/
+
 .env
 .env.local
 
