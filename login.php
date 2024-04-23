@@ -4,7 +4,7 @@ session_start();
 include 'includes/db.php';
 
 if(isset($_SESSION['admin_id'])) {
-    header("Location: /pokedex/admin/adminIndex.php");
+    header("Location: /pokedex/admin/dashboard.php");
     exit();
 }
 
@@ -24,7 +24,7 @@ if(isset($_POST['submit'])) {
     if($result->num_rows > 0) {
 
         $_SESSION['admin_id'] = 1;
-        header("Location: /pokedex/admin/adminIndex.php");
+        header("Location: /pokedex/admin/dashboard.php");
         exit();
     } else {
 
