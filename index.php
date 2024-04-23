@@ -7,6 +7,13 @@ session_start();
 $sql = "SELECT * FROM pokemon";
 $result = $conn->query($sql);
 
+
+if(isset($_GET['error']) && $_GET['error'] == 1) {
+    $errorMessage = "No se encontraron resultados.";
+} else {
+    $errorMessage = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +30,14 @@ $result = $conn->query($sql);
 
 
     <h1>Pokédex</h1>
+
+    <form action="search.php" method="get">
+        <input type="text" name="search" placeholder="Buscar Pokémon por nombre...">
+        <button type="submit">Buscar</button>
+    </form>
+    <?php if($errorMessage): ?>
+    <p><?php echo $errorMessage; ?></p>
+    <?php endif; ?>
 
     <div class="pokemon_container">
         <?php while ($row = $result->fetch_assoc()): ?>
