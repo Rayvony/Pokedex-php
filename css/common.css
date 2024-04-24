@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Pokemon Fire Red";
+  src: url("../assets/Pokemon-Fire-Red.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.firma {
+  width: 55px;
+  height: 55px;
+  margin-left: 2%;
+  filter: brightness(0) invert(1);
+}
+
 * {
   margin: 0;
   padding: 0;

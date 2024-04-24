@@ -25,16 +25,17 @@ $result = $conn->query($sql);
 </head>
 
 <body>
+    <div class="dashboard_header">
+        <img src='../assets/Firma.svg' alt='logo' class="firma" />
 
-    <h1>Pokédex - Dashboard</h1>
-    <form action="../logout.php" method="post">
-        <button type="submit" name="logout">Logout</button>
-    </form>
-
-    <form action="search.php" method="get">
-        <input type="text" name="search" placeholder="Search Pokémon by name">
-        <button type="submit">Search</button>
-    </form>
+        <form action="search.php" method="get">
+            <input type="text" name="search" placeholder="Search Pokémon by name">
+            <button type="submit">Search</button>
+        </form>
+        <form action="../logout.php" method="post">
+            <button type="submit" name="logout">Logout</button>
+        </form>
+    </div>
 
     <?php
 if(isset($_GET['error']) && $_GET['error'] == 1) {
