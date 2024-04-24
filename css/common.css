@@ -6,6 +6,42 @@
   font-display: swap;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../assets/forest.png");
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #880b62;
+  color: #fff;
+  margin-bottom: 2%;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.searchTerm {
+  height: 35px;
+  width: 70%;
+}
+
+.searchTerm::placeholder {
+  text-align: center;
+}
+
 .firma {
   width: 55px;
   height: 55px;
@@ -13,10 +49,19 @@
   filter: brightness(0) invert(1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+button {
+  background-color: #00c9a7;
+  border: none;
+  border-radius: 3px;
+  padding: 7px 25px;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #b39cd0;
 }
 
 a {

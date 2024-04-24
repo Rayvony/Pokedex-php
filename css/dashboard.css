@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 .pkmn_name {
   text-transform: capitalize;
   color: #880b62;
@@ -9,14 +11,16 @@
   margin: 0 auto;
 }
 
-.dashboard_header {
+.pokemon_container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
-  background-color: #880b62;
-  color: #fff;
-  margin-bottom: 2%;
+  gap: 20px;
+}
+
+.pokemon_container button {
+  width: 75%;
 }
 
 table {
@@ -32,8 +36,18 @@ td {
   padding: 8px;
   font-family: "Pokemon Fire Red";
   font-size: 1.5rem;
+  background-color: #fbeaffa1;
 }
 
+td:last-child,
+th:last-child {
+  border-left: none !important;
+}
+
+td:nth-last-child(2),
+th:nth-last-child(2) {
+  border-right: none !important;
+}
 th {
   background-color: #f2f2f2;
 }
