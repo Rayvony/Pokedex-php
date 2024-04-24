@@ -1,5 +1,4 @@
 <?php
-
 require_once '../includes/db.php';
 require_once '../includes/functions.php';
 session_start();
@@ -9,8 +8,22 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
-$sql = "SELECT * FROM pokemon";
-$result = $conn->query($sql);
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["search"])) {
+    $search = validate_input($_GET["search"]);
+
+    $sql = "SELECT * FROM pokemon WHERE name LIKE '%$search%'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $errorMessage = "";
+    } else {
+        header("Location: dashboard.php?error=1");
+        exit();
+    }
+} else {
+    header("Location: dashboard.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +33,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex - Dashboard</title>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
@@ -32,21 +45,10 @@ $result = $conn->query($sql);
     </form>
 
     <form action="search.php" method="get">
-        <input type="text" name="search" placeholder="Search Pokémon by name">
+        <input type="text" name="search" placeholder="Search Pokémon by name"
+            value="<?php echo htmlspecialchars($search); ?>">
         <button type="submit">Search</button>
     </form>
-
-    <?php
-if(isset($_GET['error']) && $_GET['error'] == 1) {
-    $errorMessage = "No se encontraron resultados.";
-} else {
-    $errorMessage = "";
-}
-?>
-
-    <?php if ($errorMessage): ?>
-    <p><?php echo $errorMessage; ?></p>
-    <?php endif; ?>
 
     <table>
         <thead>

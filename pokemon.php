@@ -30,6 +30,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pokemon['name']; ?>
     </title>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/detail.css">
 </head>
 
