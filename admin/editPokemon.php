@@ -54,11 +54,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE pokemon SET dexNumber = '$dexNumber', name = '$name', description = '$description', image = '$image' WHERE id = $pokemonId";
         if ($conn->query($sql) === true) {
 
-            $sqlUpdateType1 = "UPDATE pokemon_type SET type_id = '$type1' WHERE pokemon_id = $pokemonId";
+            $sqlDeleteTypes = "DELETE FROM pokemon_type WHERE pokemon_id = $pokemonId";
+
+            $sqlUpdateType1 = "INSERT INTO pokemon_type (pokemon_id, type_id) VALUES ('$pokemonId', '$type1')";
+
+
+
+            $conn->query($sqlDeleteTypes);
+
             $conn->query($sqlUpdateType1);
 
             if (!empty($type2)) {
-                $sqlUpdateType2 = "UPDATE pokemon_type SET type_id = '$type2' WHERE pokemon_id = $pokemonId";
+                $sqlUpdateType2 = "INSERT INTO pokemon_type (pokemon_id, type_id) VALUES ('$pokemonId', '$type2')";
                 $conn->query($sqlUpdateType2);
             }
 
