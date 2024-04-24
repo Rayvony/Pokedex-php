@@ -15,6 +15,17 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $sqlDeleteTypes = "DELETE FROM pokemon_type WHERE pokemon_id = $pokemonId";
     if ($conn->query($sqlDeleteTypes) === true) {
 
+        $sqlImageRoute = "SELECT image FROM pokemon WHERE id = $pokemonId";
+        $result = $conn->query($sqlImageRoute);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $imageRoute = $_SERVER['DOCUMENT_ROOT'] . $row['image'];
+
+            unlink($imageRoute);
+
+        }
+
         $sqlDeletePokemon = "DELETE FROM pokemon WHERE id = $pokemonId";
         if ($conn->query($sqlDeletePokemon) === true) {
             header("Location: dashboard.php");

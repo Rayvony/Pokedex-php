@@ -30,7 +30,7 @@ function upload_image($file)
         }
 
         if (move_uploaded_file($file["tmp_name"], $target_dir . $image_name)) {
-            return $target_dir . $image_name;
+            return "/pokedex/assets/sprites/" . $image_name;
         } else {
             return false;
         }
