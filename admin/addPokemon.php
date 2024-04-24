@@ -68,75 +68,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <h1>Add Pokémon</h1>
+    <h1 class="formTitle">Add Pokémon</h1>
+    <div class="formulario">
 
-    <form
-        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
-        method="post" enctype="multipart/form-data">
-        <label for="dexnumber">Dex Number:</label>
-        <input type="text" id="dexnumber" name="dexnumber" required><br>
+        <form
+            action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+            method="post" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+            <label for="dexnumber">Dex Number:</label>
+            <input type="text" id="dexnumber" name="dexnumber" required><br>
 
-        <label for="type1">First Type:</label>
-        <select id="type1" name="type1" required>
-            <option value="1">Normal</option>
-            <option value="2">Fighting</option>
-            <option value="3">Flying</option>
-            <option value="4">Poison</option>
-            <option value="5">Ground</option>
-            <option value="6">Rock</option>
-            <option value="7">Bug</option>
-            <option value="8">Ghost</option>
-            <option value="9">Steel</option>
-            <option value="10">Fire</option>
-            <option value="11">Water</option>
-            <option value="12">Grass</option>
-            <option value="13">Electric</option>
-            <option value="14">Psychic</option>
-            <option value="15">Ice</option>
-            <option value="16">Dragon</option>
-            <option value="17">Dark</option>
-            <option value="18">Fairy</option>
-        </select><br>
 
-        <label for="type2">Second Type:</label>
-        <select id="type2" name="type2">
-            <option value="">None</option>
-            <option value="1">Normal</option>
-            <option value="2">Fighting</option>
-            <option value="3">Flying</option>
-            <option value="4">Poison</option>
-            <option value="5">Ground</option>
-            <option value="6">Rock</option>
-            <option value="7">Bug</option>
-            <option value="8">Ghost</option>
-            <option value="9">Steel</option>
-            <option value="10">Fire</option>
-            <option value="11">Water</option>
-            <option value="12">Grass</option>
-            <option value="13">Electric</option>
-            <option value="14">Psychic</option>
-            <option value="15">Ice</option>
-            <option value="16">Dragon</option>
-            <option value="17">Dark</option>
-            <option value="18">Fairy</option>
-        </select><br>
+            <label for="type1">First Type:</label>
+            <select id="type1" name="type1" required>
+                <option value="1">Normal</option>
+                <option value="2">Fighting</option>
+                <option value="3">Flying</option>
+                <option value="4">Poison</option>
+                <option value="5">Ground</option>
+                <option value="6">Rock</option>
+                <option value="7">Bug</option>
+                <option value="8">Ghost</option>
+                <option value="9">Steel</option>
+                <option value="10">Fire</option>
+                <option value="11">Water</option>
+                <option value="12">Grass</option>
+                <option value="13">Electric</option>
+                <option value="14">Psychic</option>
+                <option value="15">Ice</option>
+                <option value="16">Dragon</option>
+                <option value="17">Dark</option>
+                <option value="18">Fairy</option>
+            </select><br>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea><br>
+            <label for="type2">Second Type:</label>
+            <select id="type2" name="type2">
+                <option value="">None</option>
+                <option value="1">Normal</option>
+                <option value="2">Fighting</option>
+                <option value="3">Flying</option>
+                <option value="4">Poison</option>
+                <option value="5">Ground</option>
+                <option value="6">Rock</option>
+                <option value="7">Bug</option>
+                <option value="8">Ghost</option>
+                <option value="9">Steel</option>
+                <option value="10">Fire</option>
+                <option value="11">Water</option>
+                <option value="12">Grass</option>
+                <option value="13">Electric</option>
+                <option value="14">Psychic</option>
+                <option value="15">Ice</option>
+                <option value="16">Dragon</option>
+                <option value="17">Dark</option>
+                <option value="18">Fairy</option>
+            </select><br>
 
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br>
 
-        <button type="submit">Add Pokémon</button>
-    </form>
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required><br>
 
-    <?php if (!empty($error)) : ?>
-    <p><?php echo $error; ?></p>
-    <?php endif; ?>
+            <button type="submit">Add Pokémon</button>
+        </form>
 
+        <?php if (!empty($error)) : ?>
+        <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+    </div>
 </body>
 
 </html>

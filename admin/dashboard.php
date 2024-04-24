@@ -107,7 +107,7 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
             </tbody>
         </table>
 
-        <button><a href="addPokemon.php">Add Pokémon</a></button>
+        <a class="addPokemon" href="addPokemon.php"><button>Add Pokémon</button></a>
     </div>
 </body>
 

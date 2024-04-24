@@ -23,8 +23,12 @@
   gap: 20px;
 }
 
-.pokemon_container button {
+.addPokemon {
   width: 75%;
+}
+
+.addPokemon button {
+  width: 100%;
 }
 
 table {
@@ -36,7 +40,7 @@ table {
 
 th,
 td {
-  border: 1px solid #dddddd;
+  border: 1px solid black;
   padding: 8px;
   font-family: "Pokemon Fire Red";
   font-size: 1.5rem;
@@ -58,7 +62,7 @@ th:nth-last-child(2) {
   border-right: none !important;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: #b39cd0;
 }
 
 .types {

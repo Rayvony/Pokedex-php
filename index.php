@@ -41,9 +41,11 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
             <input type="text" class="searchTerm" name="search" placeholder="Search Pokémon by name">
             <button type="submit">Search</button>
         </form>
-        <button>
-            <a href="login.php">Log in </a>
-        </button>
+        <a href="login.php">
+            <button>
+                Log in
+            </button>
+        </a>
     </div>
 
 
