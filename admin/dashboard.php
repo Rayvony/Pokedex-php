@@ -20,7 +20,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex - Dashboard</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -38,8 +38,8 @@ $result = $conn->query($sql);
                 <th>Name</th>
                 <th>Image</th>
                 <th>Type</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -50,24 +50,33 @@ $result = $conn->query($sql);
                 <td><?php echo $row['dexNumber']; ?>
                 </td>
                 <td>
-                    <a
+                    <a class="pkmn_name"
                         href="/pokedex/pokemon.php?id=<?php echo $row['id']; ?>">
                         <?php echo $row['name']; ?>
                     </a>
                 </td>
-                <td><img
-                        src=<?php echo $row['image']; ?>
-                    alt="<?php echo $row['name']; ?>">
+                <td>
+                    <a class="pkmn_name"
+                        href="/pokedex/pokemon.php?id=<?php echo $row['id']; ?>">
+                        <img class="pkmn_img"
+                            src=<?php echo $row['image']; ?>
+                        alt="<?php echo $row['name']; ?>"></a>
                 </td>
                 <td>
                     <?php
-                    $pokemonId = $row['id'];
+
+                $pokemonId = $row['id'];
                 $sqlTypes = "SELECT t.name FROM type t JOIN pokemon_type pt ON t.id = pt.type_id WHERE pt.pokemon_id = $pokemonId";
                 $resultTypes = $conn->query($sqlTypes);
+                echo '<div class="types">';
+
                 while ($rowType = $resultTypes->fetch_assoc()) {
-                    echo $rowType['name'] . ' ';
+                    echo '<div class="icon ' . $rowType['name'] . '"><img src="/pokedex/assets/types/' . $rowType['name'] . '.svg" alt="' . $rowType['name'] . '"></div>';
                 }
+
+                echo '</div>';
                 ?>
+
                 </td>
                 <td><a
                         href="editPokemon.php?id=<?php echo $row['id']; ?>"><button>Edit</button></a>

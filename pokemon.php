@@ -54,11 +54,14 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 $resultTypes = $conn->query($sqlTypes);
 echo '<div class="types">';
+
 while ($rowType = $resultTypes->fetch_assoc()) {
-    echo '<img class="icon ' . $rowType['name'] . '" src="/pokedex/assets/types/' . $rowType['name'] . '.svg" alt="' . $rowType['name'] . '">';
+    echo '<div class="icon ' . $rowType['name'] . '"><img src="/pokedex/assets/types/' . $rowType['name'] . '.svg" alt="' . $rowType['name'] . '"></div>';
 }
+
 echo '</div>';
 ?>
+
     </div>
 
 </body>
