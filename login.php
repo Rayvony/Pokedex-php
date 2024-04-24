@@ -43,24 +43,30 @@ if(isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/common.css">
 </head>
 
+
 <body>
 
-    <h1>Welcome</h1>
-
-    <?php if(isset($error)): ?>
-    <p><?php echo $error; ?></p>
-    <?php endif; ?>
 
 
-    <form action="login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit" name="submit">Log in</button>
-    </form>
+    <div class="header">
+        <img src='./assets/Firma.svg' alt='logo' class="firma" />
+
+    </div>
+    <h1 class="formTitle">Welcome</h1>
+    <div class="formulario">
+        <form action="login.php" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <?php if(isset($error)): ?>
+            <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <button type="submit" name="submit">Log in</button>
+        </form>
+    </div>
 
 </body>
 

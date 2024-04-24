@@ -2,7 +2,11 @@
 
 .pkmn_name {
   text-transform: capitalize;
-  color: #880b62;
+  transition: all 0.2s;
+}
+
+.pkmn_name:hover {
+  font-size: 1.7rem;
 }
 .pkmn_img {
   width: 100px;
@@ -37,6 +41,11 @@ td {
   font-family: "Pokemon Fire Red";
   font-size: 1.5rem;
   background-color: #fbeaffa1;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+  width: 15%;
 }
 
 td:last-child,
