@@ -72,9 +72,19 @@ body {
   resize: none;
 }
 
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 40%;
+  color: white;
+  background-color: rgb(255, 0, 0, 0.7);
+  border-radius: 3px;
+  padding: 10px;
+}
+
 .error {
-  margin: 10px 0 10px;
-  color: red;
+  font-family: "Pokemon Fire Red";
   font-size: 1.5rem;
 }
 
@@ -86,7 +96,7 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
   background-color: #880b62;
@@ -116,6 +126,11 @@ body {
   height: 55px;
   margin-left: 2%;
   filter: brightness(0) invert(1);
+  transition: transform 0.1s;
+}
+
+.firma:hover {
+  transform: scale(1.1);
 }
 
 button {

@@ -25,19 +25,9 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <div class="header">
-        <img src='../assets/Firma.svg' alt='logo' class="firma" />
-
-        <form class="search" action="search.php" method="get">
-            <input class="searchTerm" type="text" name="search" placeholder="Search Pokémon by name">
-            <button type="submit">Search</button>
-        </form>
-        <form action="../logout.php" method="post">
-            <button type="submit" name="logout">Logout</button>
-        </form>
-    </div>
 
     <?php
+include('../header.php');
 if(isset($_GET['error']) && $_GET['error'] == 1) {
     $errorMessage = "No se encontraron resultados.";
 } else {

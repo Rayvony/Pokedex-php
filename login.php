@@ -49,7 +49,9 @@ if(isset($_POST['submit'])) {
 
 
     <div class="header">
-        <img src='./assets/Firma.svg' alt='logo' class="firma" />
+        <a href="/pokedex/admin/dashboard.php">
+            <img src='./assets/Firma.svg' alt='logo' class="firma" />
+        </a>
 
     </div>
     <h1 class="formTitle">Welcome</h1>

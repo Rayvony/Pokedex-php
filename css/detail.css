@@ -4,11 +4,28 @@
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  background-color: rgba(251, 234, 255, 0.6);
+  font-family: "Pokemon Fire Red";
+  font-size: 1.5rem;
+  width: 50%;
+  border-radius: 3px;
+  padding: 1% 0;
+  margin: 0 auto;
+  box-shadow: 14px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pokemonName {
+  text-transform: capitalize;
+  margin-bottom: 1%;
+}
+
+.description {
+  margin: 1% 0;
 }
 
 .detail_image {
   padding: 20px;
-  border-radius: 4%;
+  border-radius: 3px;
   border: 1px solid #000;
 }
 
@@ -20,9 +37,10 @@
 .types {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 1% auto;
   gap: 20px;
   width: 12%;
+  min-width: 230.4px;
 }
 
 .icon {

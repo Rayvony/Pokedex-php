@@ -93,18 +93,3 @@ th {
   width: 60%;
   margin: 20%;
 }
-
-.errorWrapper {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  color: white;
-  background-color: rgb(255, 0, 0, 0.7);
-  border-radius: 3px;
-  padding: 10px;
-}
-
-.error {
-  font-family: "Pokemon Fire Red";
-  font-size: 1.5rem;
-}

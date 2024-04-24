@@ -41,7 +41,7 @@ if(isset($_GET['search'])) {
 
 <body>
 
-    <h1>Resultado de búsqueda</h1>
+    <?php include('header.php'); ?>
 
     <div class="pokemon_container">
         <?php if($pokemon): ?>

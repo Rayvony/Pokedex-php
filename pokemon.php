@@ -35,34 +35,31 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
 </head>
 
 <body>
+
+    <?php include('header.php'); ?>
     <div class="pokemon_detail">
+        <h1 class="pokemonName">
+            <?php echo $pokemon['name']; ?></h1>
         <div class="detail_image">
-            <img
-                src=<?php echo $pokemon['image']; ?>
-            alt="<?php echo $pokemon['name']; ?>">
+            <img src="<?php echo $pokemon['image']; ?>"
+                alt="<?php echo $pokemon['name']; ?>">
         </div>
-        <div>
-            <h1><?php echo $pokemon['name'] . ' #' . $pokemon['dexNumber'];?>
-            </h1>
-            <p>Pokédex entry:
-                <?php echo $pokemon['description']; ?>
-            </p>
-            <p>Types:
-                <?php
-            $sqlTypes = "SELECT t.name FROM type t JOIN pokemon_type pt ON t.id = pt.type_id WHERE pt.pokemon_id = $pokemonId"; ?>
-        </div>
-        <?php
-
+        <p>#<?php echo $pokemon['dexNumber']; ?>
+        </p>
+        <p>Pokédex entry:</p>
+        <p class="description">
+            <?php echo $pokemon['description']; ?>
+        </p>
+        <p>Types:</p>
+        <div class="types">
+            <?php
+            $sqlTypes = "SELECT t.name FROM type t JOIN pokemon_type pt ON t.id = pt.type_id WHERE pt.pokemon_id = $pokemonId";
 $resultTypes = $conn->query($sqlTypes);
-echo '<div class="types">';
-
 while ($rowType = $resultTypes->fetch_assoc()) {
     echo '<div class="icon ' . $rowType['name'] . '"><img src="/pokedex/assets/types/' . $rowType['name'] . '.svg" alt="' . $rowType['name'] . '"></div>';
 }
-
-echo '</div>';
 ?>
-
+        </div>
     </div>
 
 </body>

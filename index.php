@@ -35,22 +35,13 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
 
 <body>
 
-    <div class="header">
-        <img src='assets/Firma.svg' alt='logo' class="firma" />
-        <form class="search" action="search.php" method="get">
-            <input type="text" class="searchTerm" name="search" placeholder="Search Pokémon by name">
-            <button type="submit">Search</button>
-        </form>
-        <a href="login.php">
-            <button>
-                Log in
-            </button>
-        </a>
+    <?php
+include('header.php');
+if($errorMessage): ?>
+    <div class="errorWrapper">
+
+        <p class="error"><?php echo $errorMessage; ?></p>
     </div>
-
-
-    <?php if($errorMessage): ?>
-    <p><?php echo $errorMessage; ?></p>
     <?php endif; ?>
 
     <div class="pokemon_container">

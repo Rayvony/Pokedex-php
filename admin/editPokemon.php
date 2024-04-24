@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+    <?php include('../header.php'); ?>
     <h1 class="formTitle">Edit Pokémon</h1>
     <div class="formulario">
 
