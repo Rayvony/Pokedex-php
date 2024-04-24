@@ -4,6 +4,12 @@ require_once('includes/functions.php');
 
 session_start();
 
+
+if (isset($_SESSION['admin_id'])) {
+    header("Location: admin/dashboard.php");
+    exit();
+}
+
 $sql = "SELECT * FROM pokemon";
 $result = $conn->query($sql);
 
