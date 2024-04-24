@@ -45,10 +45,12 @@ if(isset($_GET['error']) && $_GET['error'] == 1) {
 }
 ?>
 
-    <?php if ($errorMessage): ?>
-    <p><?php echo $errorMessage; ?></p>
-    <?php endif; ?>
     <div class="pokemon_container">
+        <?php if ($errorMessage): ?>
+        <div class="errorWrapper">
+            <p class="error"><?php echo $errorMessage; ?></p>
+        </div>
+        <?php endif; ?>
         <table>
             <thead>
                 <tr>
