@@ -97,8 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["search"])) {
             </tbody>
         </table>
 
-        <button><a href="addPokemon.php">Add Pokémon</a></button>
+        <a class="addPokemon" href="addPokemon.php"><button>Add Pokémon</button></a>
     </div>
 </body>
+<?php include('../footer.php'); ?>
 
 </html>

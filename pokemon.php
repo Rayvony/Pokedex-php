@@ -39,7 +39,8 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     <?php include('header.php'); ?>
     <div class="pokemon_detail">
         <h1 class="pokemonName">
-            <?php echo $pokemon['name']; ?></h1>
+            <?php echo $pokemon['name']; ?>
+        </h1>
         <div class="detail_image">
             <img src="<?php echo $pokemon['image']; ?>"
                 alt="<?php echo $pokemon['name']; ?>">
@@ -63,5 +64,6 @@ while ($rowType = $resultTypes->fetch_assoc()) {
     </div>
 
 </body>
+<?php include('footer.php'); ?>
 
 </html>

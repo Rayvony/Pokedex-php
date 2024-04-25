@@ -61,7 +61,7 @@ if($errorMessage): ?>
     </div>
 
 
-
 </body>
+<?php include('footer.php'); ?>
 
 </html>

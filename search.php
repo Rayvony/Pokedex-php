@@ -61,5 +61,6 @@ if(isset($_GET['search'])) {
     </div>
 
 </body>
+<?php include('footer.php'); ?>
 
 </html>

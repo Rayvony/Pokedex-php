@@ -154,6 +154,29 @@ a {
   color: #000;
 }
 
+footer {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.footer-img {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.footer-img:hover {
+  transform: scale(1.1);
+}
+
 /*Types */
 .bug {
   background: #92bc2c;
